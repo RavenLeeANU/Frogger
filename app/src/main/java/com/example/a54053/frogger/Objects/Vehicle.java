@@ -24,7 +24,7 @@ public class Vehicle extends GameObject{
 
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        canvas.drawRect(positionX,positionY,positionX+length,positionY+width,paint);
+        canvas.drawRect(positionX,positionY,positionX+length*canvas.getWidth()/10,positionY+width*canvas.getHeight()/20,paint);
 
     }
 }

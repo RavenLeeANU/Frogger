@@ -15,6 +15,10 @@ public class Ship extends GameObject {
 
     }
 
+    public void shipReset(){
+
+    }
+
     @Override
     public void onDraw(Canvas canvas){
 
@@ -24,7 +28,7 @@ public class Ship extends GameObject {
 
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        canvas.drawRect(positionX,positionY,positionX+length,positionY+width,paint);
+        canvas.drawRect(positionX,positionY,positionX+length*canvas.getWidth()/10,positionY+width*canvas.getHeight()/20,paint);
 
     }
 }

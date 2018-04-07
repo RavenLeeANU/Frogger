@@ -55,12 +55,9 @@ public class FrogView extends View{
         frog.onDraw(canvas);
     }
 
-
-
     public void setFrog(Frog frog){
         this.frog = frog;
     }
-
 
 
     public void setGameObjects(List<GameObject> gameObjects){

@@ -13,7 +13,7 @@ public class Coordinate {
         this.y = y;
     }
 
-    public float getX() {
+    public int getX() {
         return x;
     }
 
@@ -26,7 +26,7 @@ public class Coordinate {
         this.y = y;
     }
 
-    public float getY() {
+    public int getY() {
         return y;
     }
 
