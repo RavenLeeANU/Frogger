@@ -8,27 +8,23 @@ import android.graphics.Paint;
  * Created by 54053 on 2018/4/6.
  */
 
-public class Ship  {
+public class Ship extends GameObject {
 
-    private float length;
-    private float width;
-    private Coordinate coordinate;
-    private Canvas canvas;
+    public Ship(){
+        super();
 
-
-    public Ship(Canvas canvas,Coordinate coordinate,float length){
-        this.coordinate = coordinate;
-        this.canvas = canvas;
-        this.length = length;
-        this.width = canvas.getWidth()/5;
-        onDraw();
     }
 
+    @Override
+    public void onDraw(Canvas canvas){
 
-    public void onDraw(){
+        int positionX = (int)(pos.getX()* canvas.getWidth()/10);
+        int positionY = (int)(pos.getY()* canvas.getHeight()/20);
+
+
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        this.canvas.drawRect((int)coordinate.getX(),(int)coordinate.getY(),(int)(coordinate.getX()+length),(int)(coordinate.getY()+width),paint);
+        canvas.drawRect(positionX,positionY,positionX+length,positionY+width,paint);
 
     }
 }

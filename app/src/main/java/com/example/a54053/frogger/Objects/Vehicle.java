@@ -1,8 +1,30 @@
 package com.example.a54053.frogger.Objects;
 
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+
 /**
  * Created by 54053 on 2018/4/6.
  */
 
-public class Vehicle {
+public class Vehicle extends GameObject{
+
+    public Vehicle(){
+        super();
+
+    }
+
+    @Override
+    public void onDraw(Canvas canvas){
+
+        int positionX = (int)(pos.getX()* canvas.getWidth()/10);
+        int positionY = (int)(pos.getY()* canvas.getHeight()/20);
+
+
+        Paint paint = new Paint();
+        paint.setColor(Color.BLACK);
+        canvas.drawRect(positionX,positionY,positionX+length,positionY+width,paint);
+
+    }
 }

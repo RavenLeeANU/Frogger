@@ -9,21 +9,36 @@ import android.graphics.Paint;
 
 public class GameObject {
 
-    protected int posX;
-    protected int posY;
-    protected Canvas canvas;
-
-    public GameObject(Canvas canvas,int posX,int posY){
-        this.posX = posX;
-        this.posY = posY;
-        this.canvas = canvas;
-    }
+    protected Coordinate pos;
+    protected int speed;
+    protected int length;
+    protected int width;
+    protected int step;
 
 
 
-    public void onDraw(){
-
+    public GameObject(){
 
     }
 
+    public void setPos(Coordinate pos) {
+        this.pos = pos;
+
+    }
+
+    public void setSpeed(int speed){
+        this.speed = speed;
+    }
+
+    public void onDraw(Canvas canvas){
+    }
+
+
+    public void setRectLength(int length) {
+        this.length = length;
+    }
+
+    public void setStep(int step){
+        this.step = step;
+    }
 }

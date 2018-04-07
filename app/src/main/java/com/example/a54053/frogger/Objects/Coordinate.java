@@ -5,10 +5,10 @@ package com.example.a54053.frogger.Objects;
  */
 
 public class Coordinate {
-    private float x;
-    private float y;
+    private int x;
+    private int y;
 
-    public Coordinate(float x, float y){
+    public Coordinate(int x, int y){
         this.x = x;
         this.y = y;
     }

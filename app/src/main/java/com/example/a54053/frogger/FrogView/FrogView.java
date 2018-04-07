@@ -11,8 +11,14 @@ import android.view.View;
 
 import com.example.a54053.frogger.Objects.Coordinate;
 import com.example.a54053.frogger.Objects.Frog;
+import com.example.a54053.frogger.Objects.GameObject;
 import com.example.a54053.frogger.Objects.Ship;
 import com.example.a54053.frogger.Objects.Ships;
+import com.example.a54053.frogger.Objects.Vehicle;
+import com.example.a54053.frogger.Objects.Vehicles;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by 54053 on 2018/4/6.
@@ -26,6 +32,8 @@ public class FrogView extends View{
     private float canvasWidth ;
     private float canvasHeight ;
 
+    private List<GameObject> gameObjects = new ArrayList<>();
+    private Frog frog;
 
 
     public FrogView(Context context, @Nullable AttributeSet attrs) {
@@ -39,35 +47,34 @@ public class FrogView extends View{
         canvasHeight = canvas.getHeight();
 
         this.drawBackground(canvas,mPaint);
-        this.drawShips(canvas,mPaint);
-        this.drawVehicles(canvas,mPaint);
-        this.drawFrog(canvas,mPaint);
 
+        for(int i = 0;i<gameObjects.size();i++){
+            gameObjects.get(i).onDraw(canvas);
+        }
 
+        frog.onDraw(canvas);
     }
 
-    private void drawShips(Canvas canvas, Paint mPaint) {
-        Ships ships = new Ships(canvas);
-        ships.shipGenerate();
-        Ship ship = new Ship(canvas,new Coordinate(canvas.getWidth()/2,canvas.getHeight()/2),canvas.getWidth()/5);
+
+
+    public void setFrog(Frog frog){
+        this.frog = frog;
     }
 
-    private void drawVehicles(Canvas canvas, Paint mPaint) {
 
 
+    public void setGameObjects(List<GameObject> gameObjects){
+        this.gameObjects = gameObjects;
     }
 
-    private void drawFrog(Canvas canvas,Paint mPaint){
-        Frog frog = new Frog(canvas,(int)canvasWidth/2,(int)canvasHeight/2);
 
-    }
-
+    //
     private void drawBackground(Canvas canvas,Paint mPaint) {
         //draw blocks
         float desBot = canvasHeight/ 10;
         float riverBot = 4* canvasHeight/10;
         float midBot = 5* canvasHeight/10;
-        float roadBot = 8 * canvasHeight/10;
+        float roadBot = 9 * canvasHeight/10;
 
         mPaint.setColor(Color.GRAY);
         Rect des = new Rect(0,0,(int)canvasWidth,(int)desBot);
