@@ -150,4 +150,12 @@ public class GameEngine {
     public GameState getGameState() {
         return gameState;
     }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getLife() {
+        return life;
+    }
 }
